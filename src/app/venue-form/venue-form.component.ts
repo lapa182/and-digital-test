@@ -32,7 +32,7 @@ export class VenueFormComponent {
     document.querySelector('button').classList.add('is-loading');
     this.getUserLocation().then((location) => {
 
-      this.apiService.getVenue(this.venueName, location).subscribe(data => {
+      this.apiService.getPopularVenues(this.venueName, location).subscribe(data => {
         document.querySelector('button').classList.remove('is-loading');
         this.venuesResponseList.emit(data);
       });
