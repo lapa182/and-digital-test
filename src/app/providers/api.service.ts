@@ -22,19 +22,6 @@ export class ApiService {
     return [date.getFullYear(), (month > 9 ? '' : '0') + day, (day > 9 ? '' : '0') + day].join('');
   };
 
-  getUserLocation() {
-    if ( navigator.geolocation ) {
-    
-      navigator.geolocation.getCurrentPosition(function(position) {
-        this.userLocation = position.coords.latitude + ',' + position.coords.longitude;
-        console.log(this.userLocation);
-      }.bind(this));
-    
-    } else {
-      alert('Geolocation is not supported by this browser.');
-    }
-  }
-  
   getVenue(venue, userLocation): Observable<VenueModule> {
     // @TODO remove hard-code, it's just for test purposes
     return this.http.get(API_URL + '/venues/search?ll='+ userLocation +'&query=' + 
