@@ -1,0 +1,19 @@
+<form #venueForm="ngForm" (ngSubmit)="searchForVenues()">
+  <div class="field has-addons">
+    <div class="control">
+      <input 
+        [(ngModel)]="venueName"
+        id="venueName"
+        class="input"
+        type="text" 
+        name="venueName"
+        #name="ngModel"
+        required
+        placeholder="Search venue">
+        <div [hidden]="name.valid || name.pristine" class="help is-danger">Venue is required.</div>
+    </div>
+    <div class="control">
+      <button class="button is-info" type="submit" [disabled]="!venueForm.form.valid">Search</button>
+    </div>
+  </div>
+</form>
