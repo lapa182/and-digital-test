@@ -22,9 +22,8 @@ export class ApiService {
     return [date.getFullYear(), (month > 9 ? '' : '0') + day, (day > 9 ? '' : '0') + day].join('');
   };
 
-  getVenue(venue, userLocation): Observable<VenueModule> {
-    // @TODO remove hard-code, it's just for test purposes
-    return this.http.get(API_URL + '/venues/search?ll='+ userLocation +'&query=' + 
+  getPopularVenues(venue, userLocation): Observable<VenueModule> {
+    return this.http.get(API_URL + '/venues/explore?ll='+ userLocation +'&query=' + 
           venue + '&client_id=' + 
           API_CLIENT_ID + '&client_secret=' + 
           API_CLIENT_SECRET + '&v=' + 
