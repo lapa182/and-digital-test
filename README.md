@@ -7,7 +7,11 @@
 
 ## Development server
 
+First of all `npm install`.
+
 Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files. Dist folder contains the build.
+
+For testing purposes, I've added the dist folder to the repository, but normally I wouldn't do that.
 
 ## Deployment tool
 
