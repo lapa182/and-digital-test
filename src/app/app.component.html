@@ -1,7 +1,12 @@
 <section class="section">
     <div class="container">
         <h1 class="title">Search Venue</h1>
-        <app-venue-form></app-venue-form>
-        <app-venues-list></app-venues-list>
+        <app-venue-form (venuesResponseList)="receiveData($event)"></app-venue-form>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <ngx-json-view [data]="venuesResponseList"></ngx-json-view>
     </div>
 </section>
